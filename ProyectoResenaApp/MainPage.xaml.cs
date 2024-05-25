@@ -1,25 +1,25 @@
-﻿namespace ProyectoResenaApp
+﻿using ProyectoResenaApp.Pages;
+
+namespace ProyectoResenaApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override async void OnAppearing() // Corregir el nombre del método y hacerlo asincrónico
         {
-            count++;
+            base.OnAppearing();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            // Comprobar si se muestra la pantalla de incorporación
+            if (Preferences.Default.ContainsKey(UIConstants.OnboardingShown))
+            {
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+                await Shell.Current.GoToAsync($"//{nameof(OnboardingPage)}");
         }
     }
-
 }
