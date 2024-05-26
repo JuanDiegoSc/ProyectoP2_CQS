@@ -11,7 +11,7 @@
     Shell.ForegroundColor="{StaticResource Text1}"
     Title="ProyectoResenaApp">
 
-    <Shell.Behaviors>
+    <!--<Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}"
                                    StatusBarStyle="LightContent"/>
     </Shell.Behaviors>
@@ -56,7 +56,11 @@
             Title="Perfil"
             ContentTemplate="{DataTemplate pages:ProfilePage}"
             Icon="user"
-            Route="GameDetails"/>
-    </TabBar>
-
+            Route="GameDetails"/>--><!--
+    </TabBar>-->
+    <ShellContent
+        ContentTemplate="{DataTemplate pages:GamesDetails}"
+        Route="GamesDetails"
+        Shell.NavBarIsVisible="False"
+        Shell.TabBarIsVisible="False"/>
 </Shell>
