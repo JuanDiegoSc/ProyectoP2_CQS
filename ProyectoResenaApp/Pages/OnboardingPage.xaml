@@ -23,8 +23,29 @@
                 <Shadow Brush="{StaticResource Primary}"
                         Radius="250"/>
             </Border.Shadow>
-                
         </Border>
+        <Grid Grid.Row="1"
+              RowDefinitions="*, Auto"
+              Padding="15">
+            <VerticalStackLayout Grid.Row="0"
+                                 Spacing="30">
+                <Label Text="Explora una amplia biblioteca de videojuegos, consulta requisitos y lee reseñas de otros jugadores. ¡Empieza ahora y descubre tu próximo juego favorito!"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       LineHeight="1.2"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </VerticalStackLayout>
+            <Button Grid.Row="1"
+                    Text="Comenzar"
+                    Clicked="Button_Clicked"
+                    CornerRadius="12"
+                    Padding="0,15"
+                    FontSize="17"
+                    FontAttributes="Bold"/>
+        </Grid>
     </Grid>
 
 </ContentPage>
