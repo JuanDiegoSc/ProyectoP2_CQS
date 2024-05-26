@@ -24,6 +24,11 @@
                 <Setter Property="TextTransform" Value="Uppercase"/>
                 <Setter Property="Margin" Value="0, 5, 0, 0"/>
             </Style>
+            <Style TargetType="Label" x:Key="tabContent">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="10, 0, 0, 0"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -107,6 +112,9 @@
                                 <TapGestureRecognizer Tapped="InfoTab_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
+                        <Label Text="Texto de información"
+                               IsVisible="False"
+                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Row="0"
@@ -122,6 +130,9 @@
                                 <TapGestureRecognizer Tapped="RequerimentosTab_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
+                        <Label Text="Texto de requerimientos"
+                               IsVisible="False"
+                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Row="0"
@@ -137,6 +148,9 @@
                                 <TapGestureRecognizer Tapped="Resenas_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
+                        <Label Text="Texto de reseñas"
+                               IsVisible="False"
+                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
 
                 </Grid>
