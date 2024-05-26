@@ -70,7 +70,8 @@
                         BackgroundColor="LightBlue"
                         HeightRequest="60"
                         Text="Iniciar Sesión"
-                        TextColor="Black"></Button>
+                        TextColor="Black"
+                        Clicked="Button_Clicked"></Button>
 
                 <Label Margin="0,20,0,-10"
                        HorizontalOptions="Center"

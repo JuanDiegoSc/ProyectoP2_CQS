@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\left_arrow.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\control.png" />
 	  <None Remove="Resources\Images\email.png" />
 	  <None Remove="Resources\Images\logo_game.png" />

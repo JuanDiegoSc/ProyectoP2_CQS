@@ -11,4 +11,9 @@ public partial class LoginUsuario : ContentPage
     {
 		await Navigation.PushAsync(new RegistroUsuario());
     }
+
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HomePage());
+    }
 }
