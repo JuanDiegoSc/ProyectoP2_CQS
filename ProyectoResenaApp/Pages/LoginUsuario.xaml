@@ -12,8 +12,7 @@
         <Grid ColumnDefinitions="*,*">
             <Image Aspect="AspectFit" 
                    HeightRequest="120"
-                   Source="logo_game.png"
-                   ></Image>
+                   Source="logo_game.png"></Image>
         </Grid>
 
         <Grid Grid.Row="1">
