@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoResenaApp.Pages.OnboardingPage"
-             Title="OnboardingPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="ProyectoResenaApp.Pages.OnboardingPage">
+    <Grid RowDefinitions="*, *">
+        <Border 
+                Grid.Row="0" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                StrokeShape="RoundRectangle 150"
+                StrokeThickness="10"
+                Stroke="{StaticResource Primary}"
+                HeightRequest="300"
+                WidthRequest="300" >
+            <Image Source="videogames.jpg"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFill"
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   />
+            <Border.Shadow>
+                <Shadow Brush="{StaticResource Primary}"
+                        Radius="250"/>
+            </Border.Shadow>
+                
+        </Border>
+    </Grid>
+
 </ContentPage>
