@@ -33,33 +33,6 @@
                    HorizontalOptions="Start" 
                    Grid.Row="1"/>
         </Grid>
-        <Grid BackgroundColor="#0D0118" RowDefinitions=".05*,.1*,.45*,.05*,.05,.3*">
-            <Grid Grid.Row="1" Margin="25,10,25,10">
-                <RoundRectangle
-                    CornerRadius="25"
-                    Fill="#311b45"
-                    HeightRequest="45"></RoundRectangle>
-            </Grid>
-            <CarouselView Grid.Row="2"
-                  ItemsSource="{Binding Carrusel2}">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid RowDefinitions=".2*,.6*,.2*">
-                            <Border
-                        Grid.RowSpan="3"
-                        BackgroundColor="#311B45"
-                        HeightRequest="300"
-                        Stroke="#6E557C"
-                        StrokeShape="RoundRectangle 30,30,30,30"
-                        StrokeThickness="2"
-                        WidthRequest="300">
-                                <Image Aspect="AspectFill" Source="{Binding Image}"></Image>
-                            </Border>
-                        </Grid>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-        </Grid>
         <Label 
             Text="Categorias"
             VerticalOptions="Center" 
