@@ -8,7 +8,7 @@ namespace ProyectoResenaApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginUsuario());
+            MainPage = new NavigationPage(new HomePage());
         }
     }
 }
