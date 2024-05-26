@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.HomePage"
-             Title="Beasts"
+             Title="GamesfoAll"
              BackgroundColor="{StaticResource BgColor}">
     <VerticalStackLayout>
         <SearchBar Placeholder="Buscar" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="Black">
