@@ -27,7 +27,7 @@
 
         <CarouselView IndicatorView="indicatorView"
                       Grid.Row="2"
-                      ItemsSource="{Binding Carrusel2}"
+                      ItemsSource="{Binding Carrusel1}"
                       PeekAreaInsets="30">
 
             <CarouselView.ItemsLayout>
