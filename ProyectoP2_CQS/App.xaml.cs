@@ -7,7 +7,7 @@ namespace ProyectoP2_CQS
         public App()
         {
             InitializeComponent();
-            MainPage = new Login();
+            MainPage = new MainPage();
         }
     }
 }
