@@ -19,7 +19,20 @@
             FontSize="Large"
             TextColor="White"
             FontAttributes="Bold" />
-        <Image Source="Resources\Images\tou1.jpg" WidthRequest="100" HeightRequest="100" />
+        <Grid BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="tou1.jpg" HorizontalOptions="Center" Grid.Row="0"/>
+            <Label Text="The Last Of Us Part 1" 
+                   TextColor="White"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" 
+                   Grid.Row="1"/>
+        </Grid>
         <Label 
             Text="Categorias"
             VerticalOptions="Center" 
@@ -35,6 +48,20 @@
             <Button Text="Acción" Grid.Column="0" BackgroundColor="Red" TextColor="White" FontSize="Large" />
             <Button Text="Aventura" Grid.Column="1" BackgroundColor="Blue" TextColor="White" FontSize="Large" />
         </Grid>
-        
+        <Label 
+            Text="Explorar Juegos"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+            FontSize="Large"
+            TextColor="White"
+            FontAttributes="Bold" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="unchar.jpg" WidthRequest="100" HeightRequest="100" Grid.Column="0"/>
+            <Image Source="liesp.jpg" WidthRequest="100" HeightRequest="100" Grid.Column="1"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
