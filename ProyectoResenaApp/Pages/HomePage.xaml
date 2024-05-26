@@ -27,5 +27,14 @@
             FontSize="Large"
             TextColor="White"
             FontAttributes="Bold" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Acción" Grid.Column="0" BackgroundColor="Red" TextColor="White" FontSize="Large" />
+            <Button Text="Aventura" Grid.Column="1" BackgroundColor="Blue" TextColor="White" FontSize="Large" />
+        </Grid>
+        
     </VerticalStackLayout>
 </ContentPage>
