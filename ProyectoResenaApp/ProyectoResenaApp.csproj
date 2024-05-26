@@ -63,8 +63,11 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\control.png" />
 	  <None Remove="Resources\Images\email.png" />
+	  <None Remove="Resources\Images\imgfallout.png" />
 	  <None Remove="Resources\Images\logo_game.png" />
 	  <None Remove="Resources\Images\password.png" />
+	  <None Remove="Resources\Images\sekiro.png" />
+	  <None Remove="Resources\Images\tlou.png" />
 	  <None Remove="Resources\Images\user_register.png" />
 	</ItemGroup>
 
