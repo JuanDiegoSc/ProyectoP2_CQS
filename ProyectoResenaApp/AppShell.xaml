@@ -34,7 +34,7 @@
         Shell.TabBarIsVisible="False"/>
 
     <ShellContent
-    ContentTemplate="{DataTemplate pages:LoginRegister}"
+    ContentTemplate="{DataTemplate pages:LoginUsuario}"
     Route="LoginRegister"
     Shell.NavBarIsVisible="False"
     Shell.TabBarIsVisible="False"/>
