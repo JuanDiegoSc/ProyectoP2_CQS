@@ -6,9 +6,18 @@
     xmlns:local="clr-namespace:ProyectoResenaApp"
     xmlns:pages="clr-namespace:ProyectoResenaApp.Pages"
     Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="{StaticResource BgColor}" 
+    Shell.ForegroundColor="{StaticResource Text1}"
     Title="ProyectoResenaApp">
 
-    <!--<ShellContent
+    <Shell.Resources>
+        <Style x:Key="TopNavStyle" TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="BarTextColor" Value="{StaticResource Text1}" />
+        </Style>
+    </Shell.Resources>
+
+    <ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
@@ -22,7 +31,7 @@
     ContentTemplate="{DataTemplate pages:LoginRegister}"
     Route="LoginRegister"
     Shell.NavBarIsVisible="False"
-    Shell.TabBarIsVisible="False"/>-->
+    Shell.TabBarIsVisible="False"/>
 
     <TabBar>
         <ShellContent
@@ -37,7 +46,15 @@
             Icon="game"
             Route="AllGames"/>
 
+        <ShellContent
+            Title="Perfil"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Icon="user"
+            Route="GameDetails"/>
+
+
     </TabBar>
+    
 
 
 </Shell>
