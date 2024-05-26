@@ -2,11 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.HomePage"
-             Title="HomePage">
+             Title="Beasts"
+             BackgroundColor="{StaticResource BgColor}">
     <VerticalStackLayout>
+        <SearchBar Placeholder="Buscar" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="Black">
+            <SearchBar.Style>
+                <Style TargetType="SearchBar">
+                    <Setter Property="BackgroundColor" Value="White" />
+                </Style>
+            </SearchBar.Style>
+        </SearchBar>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Juegos Mejor Valuados"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start"
+            FontSize="Large"
+            FontAttributes="Bold" />
     </VerticalStackLayout>
 </ContentPage>

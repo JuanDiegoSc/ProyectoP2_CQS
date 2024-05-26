@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoResenaApp.MainPage"
-             BackgroundColor="{StaticResource BgColor}">
+             x:Class="ProyectoResenaApp.MainPage">
+    <ContentPage.Resources>
+        <Color x:Key="BgColor">#0A2226</Color>
+        <Color x:Key="Primary">#0A2226</Color>
+    </ContentPage.Resources>
     <Grid>
         <ActivityIndicator VerticalOptions="Center"
                            HorizontalOptions="Center"

@@ -8,7 +8,6 @@ namespace ProyectoResenaApp
         {
             InitializeComponent();
         }
-
         protected override async void OnAppearing()
         {
             base.OnAppearing();

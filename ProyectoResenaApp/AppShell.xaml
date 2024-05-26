@@ -10,7 +10,7 @@
     Shell.ForegroundColor="{StaticResource Text1}"
     Title="ProyectoResenaApp">
 
-    <Shell.Resources>
+    <!--<Shell.Resources>
         <Style x:Key="TopNavStyle" TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
             <Setter Property="BarTextColor" Value="{StaticResource Text1}" />
@@ -31,7 +31,7 @@
     ContentTemplate="{DataTemplate pages:LoginRegister}"
     Route="LoginRegister"
     Shell.NavBarIsVisible="False"
-    Shell.TabBarIsVisible="False"/>
+    Shell.TabBarIsVisible="False"/>-->
 
     <TabBar>
         <ShellContent
@@ -51,10 +51,6 @@
             ContentTemplate="{DataTemplate pages:ProfilePage}"
             Icon="user"
             Route="GameDetails"/>
-
-
     </TabBar>
-    
-
 
 </Shell>
