@@ -33,6 +33,28 @@
                    HorizontalOptions="Start" 
                    Grid.Row="1"/>
         </Grid>
+        <CarouselView x:Name="imageCarousel"
+                      IndicatorView="indicatorView"
+                      ItemsSource="{Binding ImageSources}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding}" HorizontalOptions="Center" Grid.Row="0"/>
+                        <Label Text="{Binding Title}" 
+                               TextColor="White"
+                               FontSize="Large"
+                               FontAttributes="Bold"
+                               VerticalOptions="Start" 
+                               HorizontalOptions="Start" 
+                               Grid.Row="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
         <Label 
             Text="Categorias"
             VerticalOptions="Center" 
