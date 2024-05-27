@@ -92,19 +92,17 @@
             </Grid>
 
             <VerticalStackLayout Grid.Row="3"
-                                 Margin="5, 10, 5, 0">
+                     Margin="5, 10, 5, 0">
                 <BoxView HeightRequest="2" />
 
                 <Grid RowDefinitions="Auto"
                       ColumnDefinitions="Auto, Auto, Auto"
                       ColumnSpacing="15">
-
                     <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="0">
+                             Grid.Column="0">
                         <BoxView HeightRequest="4"
                                  Color="White"
                                  x:Name="infoTabIndicator"/>
-
                         <Label Text="Información"
                                TextColor="White"
                                Style="{StaticResource tabtitle}">
@@ -112,17 +110,13 @@
                                 <TapGestureRecognizer Tapped="InfoTab_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Text="Texto de información"
-                               IsVisible="False"
-                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="1">
+                             Grid.Column="1">
                         <BoxView HeightRequest="4"
                                  Color="White"
                                  x:Name="requerimientosTabIndicator"/>
-
                         <Label Text="Requerimientos"
                                TextColor="White"
                                Style="{StaticResource tabtitle}">
@@ -130,17 +124,13 @@
                                 <TapGestureRecognizer Tapped="RequerimentosTab_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Text="Texto de requerimientos"
-                               IsVisible="False"
-                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="2">
+                             Grid.Column="2">
                         <BoxView HeightRequest="4"
                                  Color="White"
                                  x:Name="resenasTabIndicator"/>
-
                         <Label Text="Reseñas"
                                TextColor="White"
                                Style="{StaticResource tabtitle}">
@@ -148,13 +138,76 @@
                                 <TapGestureRecognizer Tapped="Resenas_Tapped"/>
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Text="Texto de reseñas"
-                               IsVisible="False"
-                               Style="{StaticResource tabContent}"/>
                     </VerticalStackLayout>
-
                 </Grid>
 
+                <StackLayout x:Name="tabContent"
+                             Margin="0, 15, 0, 0"
+                             BackgroundColor="#242A48">
+                    <Label x:Name="tabText"
+                           TextColor="White"
+                           FontSize="16"
+                           Margin="10, 10, 10, 0" />
+                    
+                    <StackLayout x:Name="resenasContent"
+                                 IsVisible="False"
+                                 >
+                        <Entry Placeholder="Escribe tu reseña"
+                               Margin="10, 0, 10, 0"
+                               HeightRequest="100"/>
+                        
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10, 0, 10, 0">
+                            <Image x:Name="star1"
+                                   Source="star_empty"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Margin="5, 0, 5, 0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StarTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="star2"
+                                   Source="star_empty"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Margin="5, 0, 5, 0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StarTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="star3"
+                                   Source="star_empty"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Margin="5, 0, 5, 0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StarTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="star4"
+                                   Source="star_empty"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Margin="5, 0, 5, 0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StarTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="star5"
+                                   Source="star_empty"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Margin="5, 0, 5, 0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StarTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <Button Text="Enviar reseña"
+                                Margin="0, 10, 0, 0"/>
+                    </StackLayout>
+                </StackLayout>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
