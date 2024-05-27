@@ -11,5 +11,6 @@ La opción de editar una categoría no esta validada y su funcionamiento es obso
 El resto de opciones dentro de la aplicación web funcionan correctamente. 
 
 Proyecto progreso 2
+Se agrego un proyecto dentro de la misma solución, el nombre del segundo proyecto es ProyectoResenaApp
 Agregadas las paginas principales para la funcionalidad del proyecto, no esta definida la navegación entre páginas, por tanto para visualizar cada una se deben agregar en el
 AppShell.cs en el apartado de MainPage, se cambia el nombre para cada página por visualizar.
