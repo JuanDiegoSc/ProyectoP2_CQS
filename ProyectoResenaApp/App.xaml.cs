@@ -9,7 +9,7 @@ namespace ProyectoResenaApp
             InitializeComponent();
 
             //MainPage = new NavigationPage(new GamesDetails());
-            MainPage = new ProfilePage();
+            MainPage = new GamesDetails();
         }
     }
 }
