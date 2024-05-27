@@ -19,16 +19,16 @@ public partial class AllGames : ContentPage
     {
         Carrusel1 = new ObservableCollection<Carrusel>
         {
-             new Carrusel { Name = "The Last Of Us", ReadTime = new TimeSpan(0, 30, 0), Image = "tlou.png" },
-             new Carrusel { Name = "Fallout Shelter", ReadTime = new TimeSpan(0, 25, 0), Image = "imgfallout.png" },
-             new Carrusel { Name = "Sekiro: Shadows Die Twice", ReadTime = new TimeSpan(0, 30, 0), Image = "sekiro.png" }
+             new Carrusel { Name = "The Last Of Us", Image = "tlou.png" },
+             new Carrusel { Name = "Fallout Shelter", Image = "imgfallout.png" },
+             new Carrusel { Name = "Sekiro: Shadows Die Twice", Image = "sekiro.png" }
         };
 
         Carrusel2 = new ObservableCollection<Carrusel>
         {
-            new Carrusel { Name = "The Last Of Us", ReadTime = new TimeSpan(0, 30, 0), Image = "tlou.png" },
-            new Carrusel { Name = "Fallout Shelter", ReadTime = new TimeSpan(0, 25, 0), Image = "imgfallout.png" },
-            new Carrusel { Name = "Sekiro: Shadows Die Twice", ReadTime = new TimeSpan(0, 30, 0), Image = "sekiro.png" }
+            new Carrusel { Name = "The Last Of Us", Image = "tlou.png" },
+            new Carrusel { Name = "Fallout Shelter", Image = "imgfallout.png" },
+            new Carrusel { Name = "Sekiro: Shadows Die Twice", Image = "sekiro.png" }
   };
     }
 }
