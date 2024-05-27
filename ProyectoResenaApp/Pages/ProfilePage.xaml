@@ -2,11 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.ProfilePage"
-             Title="ProfilePage">
+             Title="ProfilePage"
+             BackgroundColor="#064050">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+        <Frame BackgroundColor="AliceBlue" Padding="10" CornerRadius="10">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="perfils.jpg" WidthRequest="50" HeightRequest="50" />
+                <Label Text="Anahi Quezada" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Padding="10">
+            <Label Text="Username: " FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="Aruki606" FontSize="Medium" TextColor="White"/>
+            <Label Text="Email:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="anahiquezada@gmail.com" FontSize="Medium" TextColor="White" />
+            <Label Text="Cumpleanos:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="2003-08-02" FontSize="Medium" TextColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="10">
+            <Label Text="Bio:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="Valar Morghulis" FontSize="Medium" TextColor="White"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="20">
+            <Button Text="Editar Perfil" HorizontalOptions="FillAndExpand" />
+            <Button Text="Salir" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
