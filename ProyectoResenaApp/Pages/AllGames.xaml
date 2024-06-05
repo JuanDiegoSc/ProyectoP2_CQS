@@ -129,13 +129,14 @@
 
         <Grid Grid.Row="5"
               Margin="10,0,15,0"
-              HeightRequest="75"
+              HeightRequest="70"
               VerticalOptions="End">
 
             <Border BackgroundColor="#311B45"
                     Stroke="#6E557C"
                     StrokeShape="RoundRectangle 30,30,30,30"
-                    StrokeThickness="2">
+                    StrokeThickness="2"
+                    Opacity=".95">
 
                 <Grid ColumnDefinitions="*,*,*"
                       RowDefinitions="*,*" RowSpacing="3">
@@ -156,11 +157,11 @@
                            HorizontalOptions="Center"
                            Text="Usuario"
                            TextColor="White"></Label>
-                    <ImageButton Source="home.svg"></ImageButton>
+                    <ImageButton Source="homef.svg"></ImageButton>
 
-                    <ImageButton Source="buscar.png"
+                    <ImageButton Source="searchf.svg" 
                                  Grid.Column="1"></ImageButton>
-                    <ImageButton Source="user.png"
+                    <ImageButton Source="userf.svg"
                                  Grid.Column="2"></ImageButton>
                 </Grid>
             </Border>

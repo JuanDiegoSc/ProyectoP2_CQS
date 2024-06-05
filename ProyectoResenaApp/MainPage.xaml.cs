@@ -14,7 +14,7 @@ namespace ProyectoResenaApp
 
             // Comprobar si se muestra la pantalla de incorporación
             if (Preferences.Default.ContainsKey(UIConstants.OnboardingShown))
-                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                await Shell.Current.GoToAsync($"//{nameof(AllGames)}");
             else
                 await Shell.Current.GoToAsync($"//{nameof(OnboardingPage)}");
         }

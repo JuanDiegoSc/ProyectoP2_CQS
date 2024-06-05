@@ -63,11 +63,14 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\control.png" />
 	  <None Remove="Resources\Images\email.png" />
+	  <None Remove="Resources\Images\homef.svg" />
 	  <None Remove="Resources\Images\imgfallout.png" />
 	  <None Remove="Resources\Images\logo_game.png" />
 	  <None Remove="Resources\Images\password.png" />
+	  <None Remove="Resources\Images\searchf.svg" />
 	  <None Remove="Resources\Images\sekiro.png" />
 	  <None Remove="Resources\Images\tlou.png" />
+	  <None Remove="Resources\Images\userf.svg" />
 	  <None Remove="Resources\Images\user_register.png" />
 	</ItemGroup>
 
@@ -87,9 +90,6 @@
 	  <MauiXaml Update="Pages\GamesDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\HomePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginUsuario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -102,6 +102,10 @@
 	  <MauiXaml Update="Pages\RegistroUsuario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 </Project>

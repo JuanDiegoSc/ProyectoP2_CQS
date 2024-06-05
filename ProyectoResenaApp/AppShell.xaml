@@ -40,11 +40,6 @@
     Shell.TabBarIsVisible="False"/>
 
     <TabBar>
-        <ShellContent
-            Title="Inicio"
-            ContentTemplate="{DataTemplate pages:HomePage}"
-            Icon="home"
-            Route="HomePage"/>
 
         <ShellContent
             Title="Juegos"
