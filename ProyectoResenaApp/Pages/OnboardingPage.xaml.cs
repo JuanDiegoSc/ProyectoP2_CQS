@@ -9,8 +9,8 @@ public partial class OnboardingPage : ContentPage
         Preferences.Default.Set(UIConstants.OnboardingShown, string.Empty);
 	}
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private  void Button_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new LoginUsuario());
+        Shell.Current.GoToAsync(nameof(AllGames));
     }
 }

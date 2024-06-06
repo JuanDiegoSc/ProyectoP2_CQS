@@ -31,4 +31,14 @@ public partial class AllGames : ContentPage
             new Carrusel { Name = "Sekiro: Shadows Die Twice", Image = "sekiro.png" }
   };
     }
+
+    private void HomeBtn(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync(nameof(AllGames));
+    }
+
+    private void ProfileBtn(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync(nameof(LoginUsuario));
+    }
 }

@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.RegistroUsuario"
-             Title="RegistroUsuario"
-             NavigationPage.HasNavigationBar="False">
+             Title="RegistroUsuario">
     
     <Grid RowDefinitions=".3*, .7*">
 
@@ -39,7 +38,8 @@
                     <Image HorizontalOptions="Center"
                            Source="user_register.png">
                     </Image>
-                    <Entry  Grid.Column="1"
+                    <Entry  x:Name="nombreUsuario"
+                        Grid.Column="1"
                             Placeholder="NOMBRE USUARIO"
                             Text="Juan Peréz"
                             VerticalOptions="Center"></Entry>
@@ -55,7 +55,8 @@
                     <Image HorizontalOptions="Center"
                        Source="email.png">
                     </Image>
-                    <Entry Grid.Column="1"
+                    <Entry x:Name="emailUsuario"
+                        Grid.Column="1"
                        Placeholder="EMAIL"
                        Text="example@gmail.com"
                        VerticalOptions="Center"></Entry>
@@ -72,7 +73,8 @@
                     <Image HorizontalOptions="Center"
                         Source="password.png">
                     </Image>
-                    <Entry  Grid.Column="1"
+                    <Entry  x:Name="contraUsuario"
+                        Grid.Column="1"
                         Placeholder="CONTRASEÑA"
                         IsPassword="True"
                         Text="12345"
@@ -80,12 +82,20 @@
                 </Grid>
 
 
-                <Button Margin="0,20,0,0"
+                <Button Margin="0,30,0,0"
                     BackgroundColor="LightBlue"
                     HeightRequest="60"
                     Text="Crear cuenta"
-                    TextColor="Black"></Button>
+                    TextColor="Black"
+                    Clicked="CrearCuentabtn"></Button>
                 
+                <Button Margin="0,20,0,0"
+                        BackgroundColor="LightCyan"
+                        HeightRequest="50"
+                        Text="Ya tengo una cuenta"
+                        TextColor="Black"
+                        Clicked="RegresarBtn"></Button>
+
             </VerticalStackLayout>
 
         </Grid>

@@ -7,11 +7,9 @@
     xmlns:pages="clr-namespace:ProyectoResenaApp.Pages"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Shell.FlyoutBehavior="Disabled"
-    Shell.BackgroundColor="{StaticResource BgColor}" 
-    Shell.ForegroundColor="{StaticResource Text1}"
     Title="ProyectoResenaApp">
 
-    <Shell.Behaviors>
+    <!--<Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}"
                                    StatusBarStyle="LightContent"/>
     </Shell.Behaviors>
@@ -58,5 +56,9 @@
         ContentTemplate="{DataTemplate pages:GamesDetails}"
         Route="GamesDetails"
         Shell.NavBarIsVisible="False"
-        Shell.TabBarIsVisible="False"/>
+        Shell.TabBarIsVisible="False"/>-->
+
+    <ShellContent
+            ContentTemplate="{DataTemplate pages:OnboardingPage}"
+            Route="OnboardingPage"/>
 </Shell>

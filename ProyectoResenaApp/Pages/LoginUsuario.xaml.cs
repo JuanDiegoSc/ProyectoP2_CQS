@@ -7,13 +7,13 @@ public partial class LoginUsuario : ContentPage
 		InitializeComponent();
 	}
 
-    private async void CrearCuenta_Clicked(object sender, EventArgs e)
+    private void CrearCuenta_Clicked(object sender, EventArgs e)
     {
-		await Navigation.PushAsync(new RegistroUsuario());
+        Shell.Current.GoToAsync(nameof(RegistroUsuario));
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private void Button_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AllGames());
+        Shell.Current.GoToAsync(nameof(AllGames));
     }
 }

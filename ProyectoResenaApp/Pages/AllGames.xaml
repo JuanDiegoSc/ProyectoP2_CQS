@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.AllGames"
-             Title="AllGames">
+              Shell.BackgroundColor="#311B45" 
+              Title="AllGames">
+             
 
     <Grid BackgroundColor="#0D0118" RowDefinitions=".05*,.1*,.45*,.05*,.05*,.3*">
         <Label FontSize="16"
@@ -157,12 +159,14 @@
                            HorizontalOptions="Center"
                            Text="Usuario"
                            TextColor="White"></Label>
-                    <ImageButton Source="homef.svg"></ImageButton>
+                    <ImageButton Source="homef.svg"
+                                 Clicked="HomeBtn"></ImageButton>
 
                     <ImageButton Source="searchf.svg" 
                                  Grid.Column="1"></ImageButton>
                     <ImageButton Source="userf.svg"
-                                 Grid.Column="2"></ImageButton>
+                                 Grid.Column="2"
+                                 Clicked="ProfileBtn"></ImageButton>
                 </Grid>
             </Border>
         </Grid>
