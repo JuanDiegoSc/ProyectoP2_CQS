@@ -12,7 +12,26 @@ public partial class LoginUsuario : ContentPage
         Shell.Current.GoToAsync(nameof(RegistroUsuario));
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void EntrarBtn(object sender, EventArgs e)
+    {
+        string email = emailTxt.Text;
+        string contra = contraTxt.Text;
+
+        if(!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(contra))
+        {
+            var usuario = await App.BaseDeDatos.UsuarioDataTable.ObtenerUsuario(email, contra);
+
+            if(usuario == null) 
+            {
+                await DisplayAlert("Alerta", "Datos invalidos", "ok");
+                return;
+            }
+            App.usuario = usuario;
+            await Shell.Current.GoToAsync(nameof(AllGames));
+        }
+    }
+
+    private void VolverBtn(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(AllGames));
     }

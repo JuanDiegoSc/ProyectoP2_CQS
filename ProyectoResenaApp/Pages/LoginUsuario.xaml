@@ -41,7 +41,8 @@
                     <Image HorizontalOptions="Center"
                            Source="email.png">
                     </Image>
-                    <Entry Grid.Column="1"
+                    <Entry x:Name="emailTxt"
+                        Grid.Column="1"
                            Placeholder="EMAIL"
                            Text="example@gmail.com"
                            VerticalOptions="Center"></Entry>
@@ -58,7 +59,8 @@
                     <Image HorizontalOptions="Center"
                             Source="password.png">
                     </Image>
-                    <Entry  Grid.Column="1"
+                    <Entry  x:Name="contraTxt"
+                        Grid.Column="1"
                             Placeholder="CONTRASEÑA"
                             IsPassword="True"
                             Text="12345"
@@ -70,7 +72,14 @@
                         HeightRequest="60"
                         Text="Iniciar Sesión"
                         TextColor="Black"
-                        Clicked="Button_Clicked"></Button>
+                        Clicked="EntrarBtn"></Button>
+
+                <Button Margin="0,20,0,0"
+                        BackgroundColor="LightBlue"
+                        HeightRequest="60"
+                        Text="Volver"
+                        TextColor="Black"
+                        Clicked="VolverBtn"></Button>
 
                 <Label Margin="0,20,0,-10"
                        HorizontalOptions="Center"
