@@ -4,7 +4,6 @@
              x:Class="ProyectoResenaApp.Pages.AllGames"
               Shell.BackgroundColor="#311B45" 
               Title="AllGames">
-             
 
     <Grid BackgroundColor="#0D0118" RowDefinitions=".05*,.1*,.45*,.05*,.05*,.3*">
         <Label FontSize="16"
@@ -51,10 +50,14 @@
                             StrokeShape="RoundRectangle 30,30,30,30"
                             StrokeThickness="2"
                             WidthRequest="300">
-                            <Grid  RowDefinitions=".2*,.6*,.2*">
+                            <Grid RowDefinitions=".2*,.6*,.2*">
                                 <Image Aspect="AspectFill" 
                                        Source="{Binding Image}"
-                                       Grid.RowSpan="3"></Image>
+                                       Grid.RowSpan="3">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnGameSelected"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
 
                                 <RoundRectangle Grid.RowSpan="3"
                                                 CornerRadius="30"
@@ -68,7 +71,6 @@
                                         </LinearGradientBrush>
                                     </RoundRectangle.Fill>
                                 </RoundRectangle>
-
 
                                 <VerticalStackLayout Grid.Row="2" Margin="20,0,0,0">
                                     <Label FontSize="Large"
@@ -86,8 +88,6 @@
                                     Offset="0,0"></Shadow>
                             </Border.Shadow>
                         </Border>
-
-
                     </Grid>
                 </DataTemplate>
             </CarouselView.ItemTemplate>

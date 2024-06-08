@@ -5,9 +5,9 @@ namespace ProyectoResenaApp.Pages;
 
 public partial class AllGames : ContentPage
 {
+    public ObservableCollection<Carrusel> Carrusel1 { get; set; }
+    public ObservableCollection<Carrusel> Carrusel2 { get; set; }
 
-    public ObservableCollection<Carrusel>? Carrusel1 { get; set; }
-    public ObservableCollection<Carrusel>? Carrusel2 { get; set; }
     public AllGames()
     {
         InitializeComponent();
@@ -29,7 +29,21 @@ public partial class AllGames : ContentPage
             new Carrusel { Name = "The Last Of Us", Image = "tlou.png" },
             new Carrusel { Name = "Fallout Shelter", Image = "imgfallout.png" },
             new Carrusel { Name = "Sekiro: Shadows Die Twice", Image = "sekiro.png" }
-  };
+        };
+    }
+
+    private async void OnGameSelected(object sender, EventArgs e)
+    {
+        var image = sender as Image;
+        var game = image.BindingContext as Carrusel;
+        if (game != null)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "SelectedGame", game }
+            };
+            await Shell.Current.GoToAsync(nameof(GamesDetails), parameters);
+        }
     }
 
     private void HomeBtn(object sender, EventArgs e)
