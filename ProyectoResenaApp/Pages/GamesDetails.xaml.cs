@@ -125,11 +125,11 @@ public partial class GamesDetails : ContentPage
 
     private void SetStarRating(int rating)
     {
-        star1.Source = rating >= 1 ? "star_filled.svg" : "star_empty.svg";
-        star2.Source = rating >= 2 ? "star_filled.svg" : "star_empty.svg";
-        star3.Source = rating >= 3 ? "star_filled.svg" : "star_empty.svg";
-        star4.Source = rating >= 4 ? "star_filled.svg" : "star_empty.svg";
-        star5.Source = rating >= 5 ? "star_filled.svg" : "star_empty.svg";
+        star1.Source = rating >= 1 ? "star_full.svg" : "star_empty.svg";
+        star2.Source = rating >= 2 ? "star_full.svg" : "star_empty.svg";
+        star3.Source = rating >= 3 ? "star_full.svg" : "star_empty.svg";
+        star4.Source = rating >= 4 ? "star_full.svg" : "star_empty.svg";
+        star5.Source = rating >= 5 ? "star_full.svg" : "star_empty.svg";
     }
 
     private void LoadReviews()
