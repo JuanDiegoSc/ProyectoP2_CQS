@@ -5,7 +5,14 @@ public partial class ProfilePage : ContentPage
 	public ProfilePage()
 	{
 		InitializeComponent();
-	}
+        if (App.AuthService.IsLoggedIn)
+        {
+            var user = App.AuthService.CurrentUser;
+            emailLabel.Text = user.Email;
+            nombreLabel.Text = user.Name;
+            nombreLabel1.Text = user.Name;
+        }
+    }
 
     private void CerrarBtn(object sender, EventArgs e)
     {
