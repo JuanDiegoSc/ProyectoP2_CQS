@@ -4,14 +4,20 @@
              x:Class="ProyectoResenaApp.Pages.GamesDetails"
              Title="GamesDetails"
              Shell.NavBarIsVisible="False"
-             Shell.PresentationMode="ModalAnimated"
-             BackgroundColor="#15444A">
+             Shell.PresentationMode="ModalAnimated">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#1E1E1E" Offset="0.1"/>
+            <GradientStop Color="#6E557C" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Border" x:Key="iconoBtnContainer">
                 <Setter Property="Padding" Value="4"/>
-                <Setter Property="BackgroundColor" Value="#15444A"/>
+                <Setter Property="BackgroundColor" Value="#1E1E1E"/>
                 <Setter Property="HeightRequest" Value="30"/>
                 <Setter Property="StrokeShape" Value="Rectangle 5"/>
                 <Setter Property="StrokeThickness" Value="0"/>
@@ -23,11 +29,12 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="White"/>
             </Style>
-            <Style TargetType="ImageButton" x:Key="ImageButtonEstilo">
+            <Style TargetType="Button" x:Key="ImageButtonEstilo">
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="HeightRequest" Value="30"/>
                 <Setter Property="WidthRequest" Value="30"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
             <Style TargetType="Grid" x:Key="tabContainer">
                 <Setter Property="ColumnDefinitions">
@@ -46,150 +53,163 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <VerticalStackLayout Margin="20,40,20,20">
-        <HorizontalStackLayout>
-            <Border StrokeThickness="0"
-                    StrokeShape="RoundRectangle 10"
-                    BackgroundColor="#15444A">
-                <ImageButton Source="flecha_atras.svg"
-                             Clicked="BackBtn"
-                             Style="{StaticResource ImageButtonEstilo}"/>
+    <ScrollView>
+        <VerticalStackLayout Margin="20,40,20,20">
+            <HorizontalStackLayout>
+                <Border StrokeThickness="0"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="#1E1E1E">
+                    <Button Clicked="BackBtn"
+                            Style="{StaticResource ImageButtonEstilo}">
+                        <Button.ImageSource>
+                            <FileImageSource File="arrow.svg" />
+                        </Button.ImageSource>
+                    </Button>
+                </Border>
+            </HorizontalStackLayout>
+            <Border Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 25"
+                    StrokeThickness="2"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    HorizontalOptions="Center">
+                <Image x:Name="GameImage"
+                       Aspect="AspectFill"
+                       Source="{Binding SelectedGame.Image}"/>
             </Border>
-        </HorizontalStackLayout>
-        <Border Stroke="#6E557C"
-                StrokeShape="RoundRectangle 25"
-                StrokeThickness="2"
-                HeightRequest="200"
-                WidthRequest="200"
-                HorizontalOptions="Center">
-            <Image x:Name="GameImage"
-                   Aspect="AspectFill"
-                   Source="{Binding SelectedGame.Image}"/>
-        </Border>
-        <Label TextColor="White"
-               FontSize="Large"
-               Text="{Binding SelectedGame.Name}"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Margin="0,10,0,10"/>
+            <Label TextColor="White"
+                   FontSize="Large"
+                   Text="{Binding SelectedGame.Name}"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
 
-        <Grid RowDefinitions="Auto, Auto, Auto"
-              Margin="0,20,0,0">
-            <VerticalStackLayout Grid.Row="0"
-                                 Margin="5, 10, 5, 0">
-                <BoxView HeightRequest="2" />
+            <Grid RowDefinitions="Auto, Auto, Auto"
+                  Margin="0,20,0,0">
+                <VerticalStackLayout Grid.Row="0"
+                                     Margin="5, 10, 5, 0">
+                    <BoxView HeightRequest="2" />
 
-                <Grid Style="{StaticResource tabContainer}">
-                    <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="0">
-                        <BoxView HeightRequest="4"
-                                 Color="White"
-                                 x:Name="infoTabIndicator"/>
-                        <Label Text="Información"
+                    <Grid Style="{StaticResource tabContainer}">
+                        <VerticalStackLayout Grid.Row="0"
+                                             Grid.Column="0">
+                            <BoxView HeightRequest="4"
+                                     Color="White"
+                                     x:Name="infoTabIndicator"/>
+                            <Label Text="Información"
+                                   TextColor="White"
+                                   Style="{StaticResource tabtitle}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="InfoTab_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Row="0"
+                                             Grid.Column="1">
+                            <BoxView HeightRequest="4"
+                                     Color="White"
+                                     x:Name="requerimientosTabIndicator"/>
+                            <Label Text="Requerimientos"
+                                   TextColor="White"
+                                   Style="{StaticResource tabtitle}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RequerimentosTab_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Row="0"
+                                             Grid.Column="2">
+                            <BoxView HeightRequest="4"
+                                     Color="White"
+                                     x:Name="resenasTabIndicator"/>
+                            <Label Text="Reseñas"
+                                   TextColor="White"
+                                   Style="{StaticResource tabtitle}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Resenas_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <StackLayout x:Name="tabContent"
+                                 Margin="0, 15, 0, 0"
+                                 BackgroundColor="#2A2A2A">
+                        <Label x:Name="tabText"
                                TextColor="White"
-                               Style="{StaticResource tabtitle}">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="InfoTab_Tapped"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </VerticalStackLayout>
+                               FontSize="16"
+                               Margin="10, 10, 10, 0" />
 
-                    <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="1">
-                        <BoxView HeightRequest="4"
-                                 Color="White"
-                                 x:Name="requerimientosTabIndicator"/>
-                        <Label Text="Requerimientos"
-                               TextColor="White"
-                               Style="{StaticResource tabtitle}">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="RequerimentosTab_Tapped"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </VerticalStackLayout>
+                        <StackLayout x:Name="resenasContent"
+                                     IsVisible="False">
+                            <Entry Placeholder="Escribe tu reseña"
+                                   Margin="10, 0, 10, 0"
+                                   HeightRequest="100"
+                                   TextColor="White"
+                                   PlaceholderColor="Gray"
+                                   BackgroundColor="#333333"/>
 
-                    <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="2">
-                        <BoxView HeightRequest="4"
-                                 Color="White"
-                                 x:Name="resenasTabIndicator"/>
-                        <Label Text="Reseñas"
-                               TextColor="White"
-                               Style="{StaticResource tabtitle}">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Resenas_Tapped"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </VerticalStackLayout>
-                </Grid>
-
-                <StackLayout x:Name="tabContent"
-                             Margin="0, 15, 0, 0"
-                             BackgroundColor="#242A48">
-                    <Label x:Name="tabText"
-                           TextColor="White"
-                           FontSize="16"
-                           Margin="10, 10, 10, 0" />
-
-                    <StackLayout x:Name="resenasContent"
-                                 IsVisible="False">
-                        <Entry Placeholder="Escribe tu reseña"
-                               Margin="10, 0, 10, 0"
-                               HeightRequest="100"/>
-
-                        <StackLayout Orientation="Horizontal"
-                                     Margin="10, 0, 10, 0">
-                            <Image x:Name="star1"
-                                   Source="star_empty"
-                                   WidthRequest="20"
-                                   HeightRequest="20"
-                                   Margin="5, 0, 5, 0">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StarTapped"/>
-                                </Image.GestureRecognizers>
-                            </Image>
-                            <Image x:Name="star2"
-                                   Source="star_empty"
-                                   WidthRequest="20"
-                                   HeightRequest="20"
-                                   Margin="5, 0, 5, 0">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StarTapped"/>
-                                </Image.GestureRecognizers>
-                            </Image>
-                            <Image x:Name="star3"
-                                   Source="star_empty"
-                                   WidthRequest="20"
-                                   HeightRequest="20"
-                                   Margin="5, 0, 5, 0">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StarTapped"/>
-                                </Image.GestureRecognizers>
-                            </Image>
-                            <Image x:Name="star4"
-                                   Source="star_empty"
-                                   WidthRequest="20"
-                                   HeightRequest="20"
-                                   Margin="5, 0, 5, 0">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StarTapped"/>
-                                </Image.GestureRecognizers>
-                            </Image>
-                            <Image x:Name="star5"
-                                   Source="star_empty"
-                                   WidthRequest="20"
-                                   HeightRequest="20"
-                                   Margin="5, 0, 5, 0">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StarTapped"/>
-                                </Image.GestureRecognizers>
-                            </Image>
+                            <StackLayout Orientation="Horizontal"
+                                         Margin="10, 0, 10, 0">
+                                <Image x:Name="star1"
+                                       Source="star_empty"
+                                       StyleId="1"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       Margin="5, 0, 5, 0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="StarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image x:Name="star2"
+                                       Source="star_empty"
+                                       StyleId="2"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       Margin="5, 0, 5, 0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="StarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image x:Name="star3"
+                                       Source="star_empty"
+                                       StyleId="3"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       Margin="5, 0, 5, 0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="StarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image x:Name="star4"
+                                       Source="star_empty"
+                                       StyleId="4"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       Margin="5, 0, 5, 0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="StarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image x:Name="star5"
+                                       Source="star_empty"
+                                       StyleId="5"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       Margin="5, 0, 5, 0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="StarTapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <Button Text="Enviar reseña"
+                                    Margin="0, 10, 0, 0"/>
                         </StackLayout>
-                        <Button Text="Enviar reseña"
-                                Margin="0, 10, 0, 0"/>
                     </StackLayout>
-                </StackLayout>
-            </VerticalStackLayout>
-        </Grid>
-    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
