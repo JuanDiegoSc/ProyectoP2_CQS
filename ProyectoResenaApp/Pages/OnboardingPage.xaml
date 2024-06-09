@@ -2,6 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.OnboardingPage">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="Black" Offset="0.1"/>
+            <GradientStop Color="#482F52" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <Grid RowDefinitions="*, *">
         <Border 
                 Grid.Row="0" 
@@ -9,7 +16,7 @@
                 VerticalOptions="Center"
                 StrokeShape="RoundRectangle 150"
                 StrokeThickness="10"
-                Stroke="{StaticResource Primary}"
+                Stroke="#6E557C"
                 HeightRequest="300"
                 WidthRequest="300" >
             <Image Source="videogames.jpg"
@@ -17,10 +24,9 @@
                    VerticalOptions="Center"
                    Aspect="AspectFill"
                    HeightRequest="300"
-                   WidthRequest="300"
-                   />
+                   WidthRequest="300" />
             <Border.Shadow>
-                <Shadow Brush="{StaticResource Primary}"
+                <Shadow Brush="#C283FD"
                         Radius="250"/>
             </Border.Shadow>
         </Border>
@@ -35,6 +41,7 @@
                        LineHeight="1.2"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"
+                       TextColor="White"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"/>
             </VerticalStackLayout>
@@ -44,8 +51,9 @@
                     CornerRadius="12"
                     Padding="0,15"
                     FontSize="17"
-                    FontAttributes="Bold"/>
+                    FontAttributes="Bold"
+                    BackgroundColor="Black"
+                    TextColor="White"/>
         </Grid>
     </Grid>
-
 </ContentPage>
