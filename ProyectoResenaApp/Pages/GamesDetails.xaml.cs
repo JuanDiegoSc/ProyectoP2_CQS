@@ -1,20 +1,28 @@
+using ProyectoResenaApp.Data;
 using ProyectoResenaApp.Models;
 using Microsoft.Maui.Controls;
 using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ProyectoResenaApp.Pages;
 
 [QueryProperty(nameof(SelectedGame), "SelectedGame")]
 public partial class GamesDetails : ContentPage
 {
-    private Carrusel _selectedGame;
-    public Carrusel SelectedGame
+    private Juego _selectedGame;
+    private ResenasData _database;
+    private int _selectedRating = 0;
+    private Resena _editResena = null;
+
+    public Juego SelectedGame
     {
         get => _selectedGame;
         set
         {
             _selectedGame = value;
             OnPropertyChanged();
+            LoadReviews();
             UpdateGameDetails();
         }
     }
@@ -22,6 +30,7 @@ public partial class GamesDetails : ContentPage
     public GamesDetails()
     {
         InitializeComponent();
+        _database = new ResenasData();
         BindingContext = this;
     }
 
@@ -36,9 +45,10 @@ public partial class GamesDetails : ContentPage
         resenasTabIndicator.Color = Colors.White;
         infoTabIndicator.Color = Colors.DarkSlateBlue;
         resenasContent.IsVisible = false;
-        tabText.Text = $"Fecha de Lanzamiento: {SelectedGame.ReleaseDate}\n" +
-                       $"Desarrollador: {SelectedGame.Developer}\n" +
-                       $"Editor: {SelectedGame.Publisher}";
+        reviewList.IsVisible = false;
+        tabText.Text = $"Fecha de Lanzamiento: {SelectedGame.FechaLanzamiento}\n" +
+                       $"Desarrollador: {SelectedGame.Desarrollador}\n" +
+                       $"Editor: {SelectedGame.Editor}";
     }
 
     private void RequerimentosTab_Tapped(object sender, TappedEventArgs e)
@@ -47,7 +57,8 @@ public partial class GamesDetails : ContentPage
         resenasTabIndicator.Color = Colors.White;
         requerimientosTabIndicator.Color = Colors.DarkSlateBlue;
         resenasContent.IsVisible = false;
-        tabText.Text = $"Recomendados: \n{SelectedGame.Requirements}";
+        reviewList.IsVisible = false;
+        tabText.Text = $"Recomendados: \n{SelectedGame.Requerimientos}";
     }
 
     private void Resenas_Tapped(object sender, TappedEventArgs e)
@@ -56,25 +67,94 @@ public partial class GamesDetails : ContentPage
         requerimientosTabIndicator.Color = Colors.White;
         resenasTabIndicator.Color = Colors.DarkSlateBlue;
         resenasContent.IsVisible = true;
+        reviewList.IsVisible = true;
         tabText.Text = string.Empty;
     }
 
     private void UpdateGameDetails()
     {
-        tabText.Text = $"Fecha de Lanzamiento: {SelectedGame.ReleaseDate}\n" +
-                       $"Desarrollador: {SelectedGame.Developer}\n" +
-                       $"Editor: {SelectedGame.Publisher}";
+        tabText.Text = $"Fecha de Lanzamiento: {SelectedGame.FechaLanzamiento}\n" +
+                       $"Desarrollador: {SelectedGame.Desarrollador}\n" +
+                       $"Editor: {SelectedGame.Editor}";
     }
 
     private void StarTapped(object sender, TappedEventArgs e)
     {
         var tappedStar = sender as Image;
-        int starRating = int.Parse(tappedStar.StyleId);
+        _selectedRating = int.Parse(tappedStar.StyleId);
 
-        star1.Source = starRating >= 1 ? "star_filled" : "star_empty";
-        star2.Source = starRating >= 2 ? "star_filled" : "star_empty";
-        star3.Source = starRating >= 3 ? "star_filled" : "star_empty";
-        star4.Source = starRating >= 4 ? "star_filled" : "star_empty";
-        star5.Source = starRating >= 5 ? "star_filled" : "star_empty";
+        SetStarRating(_selectedRating);
+    }
+
+    private async void SendReview(object sender, EventArgs e)
+    {
+        if (!App.AuthService.IsLoggedIn)
+        {
+            await DisplayAlert("No autenticado", "Debe iniciar sesión para enviar una reseña", "OK");
+            return;
+        }
+
+        string comentario = reviewEntry.Text;
+
+        if (_editResena == null)
+        {
+            var resena = new Resena
+            {
+                Usuario = App.AuthService.CurrentUser.Name,
+                Comentario = comentario,
+                Rating = _selectedRating,
+                GameName = SelectedGame.Nombre
+            };
+
+            SelectedGame.Resenas.Add(resena);
+            _database.SaveResena(resena);
+        }
+        else
+        {
+            _editResena.Comentario = comentario;
+            _editResena.Rating = _selectedRating;
+            _database.UpdateResena(_editResena);
+            _editResena = null;
+        }
+
+        reviewEntry.Text = string.Empty;
+        SetStarRating(0);
+
+        await DisplayAlert("Reseña Enviada", "Tu reseña ha sido enviada", "OK");
+    }
+
+    private void SetStarRating(int rating)
+    {
+        star1.Source = rating >= 1 ? "star_filled.svg" : "star_empty.svg";
+        star2.Source = rating >= 2 ? "star_filled.svg" : "star_empty.svg";
+        star3.Source = rating >= 3 ? "star_filled.svg" : "star_empty.svg";
+        star4.Source = rating >= 4 ? "star_filled.svg" : "star_empty.svg";
+        star5.Source = rating >= 5 ? "star_filled.svg" : "star_empty.svg";
+    }
+
+    private void LoadReviews()
+    {
+        var resenas = _database.GetResenasForGame(SelectedGame.Nombre);
+        SelectedGame.Resenas = new ObservableCollection<Resena>(resenas);
+    }
+
+    private void EditReview(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var resena = button.BindingContext as Resena;
+
+        reviewEntry.Text = resena.Comentario;
+        SetStarRating(resena.Rating);
+
+        _editResena = resena;
+    }
+
+    private void DeleteReview(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var resena = button.BindingContext as Resena;
+
+        SelectedGame.Resenas.Remove(resena);
+        _database.DeleteResena(resena.Id);
     }
 }
