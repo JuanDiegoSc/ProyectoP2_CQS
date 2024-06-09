@@ -140,30 +140,34 @@
                     StrokeThickness="2"
                     Opacity=".95">
 
-                <Grid ColumnDefinitions="*,*,*"
-                      RowDefinitions="*,*" RowSpacing="3">
+                <Grid ColumnDefinitions="*,2*,*"
+                      RowDefinitions="7*,3*" RowSpacing="4">
                     <Label Grid.Row="1"
                            FontSize="10"
                            HorizontalOptions="Center"
                            Text="Inicio"
                            TextColor="White"></Label>
-                    <Label Grid.Column="1"
-                           Grid.Row="1"
+                    
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
                            FontSize="10"
                            HorizontalOptions="Center"
-                           Text="Buscar"
+                           Text="AllGames"
                            TextColor="White"></Label>
+                    
                     <Label Grid.Row="1"
                            Grid.Column="2"
                            FontSize="10"
                            HorizontalOptions="Center"
                            Text="Usuario"
                            TextColor="White"></Label>
+                    
                     <ImageButton Source="homef.svg"
                                  Clicked="HomeBtn"></ImageButton>
+                    
+                    <Image Source="logo_game.png" 
+                                 Grid.Column="1"></Image>
 
-                    <ImageButton Source="searchf.svg" 
-                                 Grid.Column="1"></ImageButton>
                     <ImageButton Source="userf.svg"
                                  Grid.Column="2"
                                  Clicked="ProfileBtn"></ImageButton>

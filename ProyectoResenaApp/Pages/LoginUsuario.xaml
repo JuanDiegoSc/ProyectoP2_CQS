@@ -44,7 +44,7 @@
                     <Entry x:Name="emailTxt"
                         Grid.Column="1"
                            Placeholder="EMAIL"
-                           Text="example@gmail.com"
+                           Text="{Binding Email}"
                            VerticalOptions="Center"></Entry>
                            
                 </Grid>
@@ -63,7 +63,7 @@
                         Grid.Column="1"
                             Placeholder="CONTRASEÑA"
                             IsPassword="True"
-                            Text="12345"
+                            Text="{Binding contra}"
                             VerticalOptions="Center"></Entry>
                 </Grid>
 

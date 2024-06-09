@@ -1,9 +1,14 @@
+using ProyectoResenaApp.Models;
+using System.Security.Cryptography.X509Certificates;
+
 namespace ProyectoResenaApp.Pages;
 
 public partial class LoginUsuario : ContentPage
 {
-	public LoginUsuario()
+
+    public LoginUsuario()
 	{
+        
 		InitializeComponent();
 	}
 
@@ -26,7 +31,9 @@ public partial class LoginUsuario : ContentPage
                 await DisplayAlert("Alerta", "Datos invalidos", "ok");
                 return;
             }
-            App.usuario = usuario;
+
+            //App.usuario = usuario;
+            App.AuthService.Login(usuario);
             await Shell.Current.GoToAsync(nameof(AllGames));
         }
     }

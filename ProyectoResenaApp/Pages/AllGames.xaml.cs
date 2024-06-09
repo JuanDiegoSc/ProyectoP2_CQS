@@ -1,3 +1,4 @@
+using Microsoft.Maui.ApplicationModel.Communication;
 using ProyectoResenaApp.Models;
 using System.Collections.ObjectModel;
 
@@ -46,13 +47,21 @@ public partial class AllGames : ContentPage
         }
     }
 
-    private void HomeBtn(object sender, EventArgs e)
+    private async void HomeBtn(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync(nameof(AllGames));
+        await Shell.Current.GoToAsync(nameof(AllGames));
     }
 
-    private void ProfileBtn(object sender, EventArgs e)
+    private async void ProfileBtn(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync(nameof(LoginUsuario));
+        if (App.AuthService.IsLoggedIn)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
+        else
+        {
+            await DisplayAlert("No autenticado", "Debe iniciar sesión para acceder al perfil", "OK");
+            await Navigation.PushAsync(new LoginUsuario());
+        }
     }
 }

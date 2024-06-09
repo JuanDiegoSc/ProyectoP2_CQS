@@ -13,6 +13,7 @@ namespace ProyectoResenaApp
             Routing.RegisterRoute(nameof(LoginUsuario), typeof(LoginUsuario));
             Routing.RegisterRoute(nameof(RegistroUsuario), typeof(RegistroUsuario));
             Routing.RegisterRoute(nameof(GamesDetails), typeof(GamesDetails));
+            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
         }
     }
 }

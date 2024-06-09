@@ -8,28 +8,30 @@
         
         <Frame BackgroundColor="AliceBlue" Padding="10" CornerRadius="10">
             <StackLayout Orientation="Horizontal">
-                <Image Source="perfils.jpg" WidthRequest="50" HeightRequest="50" />
-                <Label Text="Anahi Quezada" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" />
+                <Image Source="userf.svg" WidthRequest="50" HeightRequest="50" />
+                <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" />
             </StackLayout>
         </Frame>
 
         <StackLayout Padding="10">
             <Label Text="Username: " FontSize="Large" TextColor="White" FontAttributes="Bold"/>
-            <Label Text="Aruki606" FontSize="Medium" TextColor="White"/>
+            <Label Text="{Binding Name}" FontSize="Medium" TextColor="White"/>
             <Label Text="Email:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
-            <Label Text="anahiquezada@gmail.com" FontSize="Medium" TextColor="White" />
-            <Label Text="Cumpleanos:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
-            <Label Text="2003-08-02" FontSize="Medium" TextColor="White"/>
+            <Label Text="{Binding Email}" FontSize="Medium" TextColor="White" />
         </StackLayout>
-
         <StackLayout Padding="10">
-            <Label Text="Bio:" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
-            <Label Text="Valar Morghulis" FontSize="Medium" TextColor="White"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Padding="20">
-            <Button Text="Editar Perfil" HorizontalOptions="FillAndExpand" />
-            <Button Text="Salir" HorizontalOptions="FillAndExpand" />
+            <Button Text="Cerrar Sesión"
+                    BackgroundColor="DarkRed"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    Clicked="CerrarBtn"></Button>
+            <Button Text="Volver"
+                    BackgroundColor="DarkGreen"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    Clicked="VolverBtn"></Button>
         </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -1,6 +1,8 @@
 ﻿using ProyectoResenaApp.Data;
 using ProyectoResenaApp.Models;
 using ProyectoResenaApp.Pages;
+using ProyectoResenaApp.Servicios;
+using System.Linq.Expressions;
 
 namespace ProyectoResenaApp
 {
@@ -23,14 +25,20 @@ namespace ProyectoResenaApp
 
         public static Usuario? usuario { get; set; }
 
-
+        public static IAuthService AuthService { get; private set; }
 
         public App()
         {
             InitializeComponent();
 
             //MainPage = new NavigationPage(new GamesDetails());
+
+            AuthService = new AuthService();
+
             MainPage = new AppShell();
+
+           
+
         }
     }
 }
