@@ -12,6 +12,7 @@ public partial class ProfilePage : ContentPage
             nombreLabel.Text = user.Name;
             nombreLabel1.Text = user.Name;
         }
+        Routing.RegisterRoute(nameof(EditUsuario), typeof(EditUsuario));
     }
 
     private void CerrarBtn(object sender, EventArgs e)
@@ -22,5 +23,10 @@ public partial class ProfilePage : ContentPage
     private void VolverBtn(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(AllGames));
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync(nameof(EditUsuario));
     }
 }
