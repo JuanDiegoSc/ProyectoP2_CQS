@@ -17,8 +17,6 @@ namespace ProyectoResenaApp.Models
 
         public string? contra { get; set; }
 
-        //public resena Resena {get; set;}
-
         public Usuario()
         {
             Id = Guid.NewGuid();

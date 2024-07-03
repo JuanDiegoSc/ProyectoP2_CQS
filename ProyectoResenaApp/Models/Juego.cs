@@ -15,6 +15,7 @@ namespace ProyectoResenaApp.Models
         public string? Editor { get; set; }
         public string? FechaLanzamiento { get; set; }
         public string? Requerimientos { get; set; }
+
         public ObservableCollection<Resena>? Resenas { get; set; }
     }
 }

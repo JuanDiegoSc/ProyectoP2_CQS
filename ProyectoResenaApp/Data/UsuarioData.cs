@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoResenaApp.Data
 {
-    public  class UsuarioData
+    public class UsuarioData
     {
         public SQLiteAsyncConnection _conexionDB;
 
