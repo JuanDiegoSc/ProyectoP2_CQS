@@ -12,9 +12,8 @@ public partial class EditUsuario : ContentPage
         Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
     }
 
-    private void GuardarBtn(object sender, EventArgs e)
+    private async void GuardarBtn(object sender, EventArgs e)
     {
-
     }
 
     private void CancelarBtn(object sender, EventArgs e)
