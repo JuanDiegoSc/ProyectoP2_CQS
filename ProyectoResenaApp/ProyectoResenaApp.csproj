@@ -61,6 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\callofduty.jpeg" />
 	  <None Remove="Resources\Images\control.png" />
 	  <None Remove="Resources\Images\email.png" />
 	  <None Remove="Resources\Images\homef.svg" />

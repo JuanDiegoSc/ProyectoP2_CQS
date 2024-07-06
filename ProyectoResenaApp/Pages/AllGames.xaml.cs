@@ -1,5 +1,6 @@
 using Microsoft.Maui.ApplicationModel.Communication;
 using ProyectoResenaApp.Models;
+using ProyectoResenaApp.Servicios;
 using System.Collections.ObjectModel;
 
 namespace ProyectoResenaApp.Pages;
@@ -12,8 +13,22 @@ public partial class AllGames : ContentPage
     public AllGames()
     {
         InitializeComponent();
-        InitializeGames();
+        //InitializeGames();
         BindingContext = this;
+        GetCategorias();
+        GetJuegos();
+    }
+
+    private async void GetJuegos()
+    {
+        var juegos = await ApiService.GetJuegos();
+        CvJuegos.ItemsSource = juegos;
+    }
+
+    private async void GetCategorias() //Agregar como MVVM
+    {
+       var categorias =  await ApiService.GetCategorias();
+        CvCategorias.ItemsSource = categorias;
     }
 
     private void InitializeGames()

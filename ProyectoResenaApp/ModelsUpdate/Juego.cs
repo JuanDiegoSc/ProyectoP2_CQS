@@ -24,6 +24,8 @@ namespace ProyectoResenaApp.ModelsUpdate
         [JsonProperty("urlImagen")]
         public string urlImagen { get; set; }
 
+        public string FullImageUrl => AppSettings.ApiUrl + urlImagen;
+
         [JsonProperty("categoriaId")]
         public int categoriaId { get; set; }
 
