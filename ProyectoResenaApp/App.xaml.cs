@@ -31,7 +31,6 @@ namespace ProyectoResenaApp
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new GamesDetails());
 
             AuthService = new AuthService();
 

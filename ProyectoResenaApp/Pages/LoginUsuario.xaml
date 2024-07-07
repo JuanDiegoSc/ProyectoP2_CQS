@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoResenaApp.Pages.LoginUsuario"
+             xmlns:local="clr-namespace:ProyectoResenaApp.ViewModels"
              Title="LoginUsuario">
+
+    <ContentPage.BindingContext>
+        <local:userViewModel />
+    </ContentPage.BindingContext>
 
     <Grid RowDefinitions=".3*, .7*">
 
@@ -63,7 +68,7 @@
                         Grid.Column="1"
                             Placeholder="CONTRASEÑA"
                             IsPassword="True"
-                            Text="{Binding contra}"
+                            Text="{Binding Password}"
                             VerticalOptions="Center"></Entry>
                 </Grid>
 
@@ -72,7 +77,7 @@
                         HeightRequest="60"
                         Text="Iniciar Sesión"
                         TextColor="Black"
-                        Clicked="EntrarBtn"></Button>
+                        Command="{Binding LoginCommand}"></Button>
 
                 <Button Margin="0,20,0,0"
                         BackgroundColor="LightBlue"

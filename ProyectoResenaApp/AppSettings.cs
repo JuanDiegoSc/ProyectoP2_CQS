@@ -8,6 +8,6 @@ namespace ProyectoResenaApp
 {
     public static class AppSettings
     {
-        public static string ApiUrl = "https://kw3nk7r2-5192.use2.devtunnels.ms/";
+        public static string ApiUrl = "https://1s85qm4h-5192.use2.devtunnels.ms/";
     }
 }

@@ -19,6 +19,7 @@ namespace ProyectoResenaApp.Servicios
 
         public static async Task<List<Juego>> GetJuegos()
         {
+
             var httpClient = new HttpClient();
             var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Juego");
             return JsonConvert.DeserializeObject<List<Juego>>(response);
